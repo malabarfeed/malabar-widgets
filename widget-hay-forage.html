@@ -1,0 +1,298 @@
+<!-- Malabar Feed and Farm — Hay Bales (Search + Ingredients/Feeding Info) -->
+<!-- Paste this entire block into a GoDaddy HTML/Custom Code section on the "Hay Bales" page -->
+<div id="mff-search-widget">
+  <style> #mff-search-widget { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 8px 0; box-sizing: border-box; } #mff-search-widget * { box-sizing: border-box; } .mff-search-input-wrap { position: relative; margin-bottom: 14px; } .mff-search-input { width: 100%; padding: 13px 18px 13px 42px; border-radius: 999px; border: 1.5px solid #D9CFB8; background: #FBF8F1; font-size: 15px; color: #2A2620; outline: none; } .mff-search-input:focus { border-color: #C89B3C; box-shadow: 0 0 0 3px rgba(200,155,60,.18); } .mff-search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #3F5872; font-size: 15px; pointer-events: none; } .mff-search-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; } .mff-empty { padding: 24px 16px; text-align: center; color: #3F5872; font-size: 13.5px; } .mff-hero { background: linear-gradient(135deg, #1F3A54 0%, #2c4b76 100%); border-radius: 12px; padding: 26px 22px 24px; margin-bottom: 18px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 14px rgba(31,58,84,.25); } .mff-hero:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: #C9A45C; } .mff-hero-title { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 700; color: #fff; letter-spacing: .3px; margin: 4px 0 6px; } .mff-hero-sub { font-size: 13.5px; color: #D9E2EC; margin-bottom: 16px; } .mff-hero .mff-search-input-wrap { margin: 0 auto; max-width: 560px; } .mff-hero .mff-search-input { padding: 16px 20px 16px 48px; font-size: 16px; background: #fff; border: 2px solid transparent; box-shadow: 0 3px 10px rgba(0,0,0,.18); } .mff-hero .mff-search-input:focus { border-color: #C9A45C; box-shadow: 0 0 0 4px rgba(201,164,92,.35); } .mff-hero .mff-search-icon { left: 18px; font-size: 18px; } .mff-brand-label { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 700; color: #1F3A54; margin: 0 0 10px 2px; display: flex; align-items: center; gap: 10px; } .mff-brand-label:after { content: ""; flex: 1; height: 1px; background: #C9A45C; opacity: .7; } .mff-search-filters { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 10px; margin-bottom: 16px; } .mff-brand { position: relative; background: #fff; border: 2px solid #E3DCC8; border-radius: 10px; overflow: hidden; cursor: pointer; user-select: none; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; } .mff-brand:hover { transform: translateY(-2px); box-shadow: 0 5px 12px rgba(31,58,84,.15); border-color: #C9A45C; } .mff-brand-logo { height: 72px; display: flex; align-items: center; justify-content: center; padding: 8px 22px; background: #fff; } .mff-brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; } .mff-brand-word { font-family: Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: 700; color: #1F3A54; text-align: center; line-height: 1.2; } .mff-brand-name { background: #F1EBDA; color: #1F3A54; text-align: center; font-size: 11.5px; font-weight: 700; padding: 7px 4px 6px; line-height: 1.25; min-height: 42px; flex: 1; display: flex; flex-direction: column; justify-content: center; } .mff-brand-name span { display: block; font-size: 10.5px; font-weight: 600; color: #6E7F5C; margin-top: 1px; } .mff-brand.mff-active { border-color: #C9A45C; box-shadow: 0 0 0 2px #C9A45C, 0 6px 14px rgba(31,58,84,.25); transform: translateY(-2px); } .mff-brand.mff-active .mff-brand-name { background: #1F3A54; color: #fff; } .mff-brand.mff-active .mff-brand-name span { color: #E8D3A0; } .mff-brand.mff-active:after { content: "\2713"; position: absolute; top: 6px; right: 6px; width: 20px; height: 20px; border-radius: 50%; background: #C9A45C; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; } @media (max-width: 480px) { .mff-hero { padding: 20px 14px 18px; } .mff-hero-title { font-size: 21px; } .mff-search-filters { grid-template-columns: repeat(3, 1fr); gap: 8px; } .mff-brand-logo { height: 54px; } .mff-card { flex-basis: 132px; } }  .mff-thumb { width: 100%; aspect-ratio: 1/1; cursor: zoom-in; border-radius: 6px; background: #fff; border: 1px solid #EDE7D6; display: flex; align-items: center; justify-content: center; overflow: hidden; } .mff-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; } .mff-thumb-empty { font-size: 30px; color: #D9CFB8; } .mff-thumb:has(.mff-thumb-empty) { cursor: default; }
+ .mff-pop { grid-column: 1/-1; background: #FBF8F1; border: 2px solid #C9A45C; border-radius: 12px; padding: 12px 0 12px; position: relative; opacity: 0; transform: translateY(-12px) scale(.98); transform-origin: top center; transition: opacity .3s ease, transform .35s cubic-bezier(.2,.8,.2,1); margin-bottom: 6px; }
+ .mff-pop.mff-in { opacity: 1; transform: none; }
+ .mff-pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 14px 10px; font-size: 13px; color: #3F5872; } .mff-pop-head strong { font-family: Georgia, serif; font-size: 16px; color: #1F3A54; } .mff-pop-x { border: 0; background: #1F3A54; color: #fff; border-radius: 999px; font-size: 12px; font-weight: 700; padding: 5px 12px; cursor: pointer; }
+ .mff-trackwrap { position: relative; }
+ .mff-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain; padding: 4px 24px 10px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #C9A45C #EDE7D6; }
+ .mff-card { flex: 0 0 150px; scroll-snap-align: start; background: #fff; border: 2px solid #EDE7D6; border-radius: 10px; padding: 8px; cursor: pointer; animation: mffSlide .45s cubic-bezier(.2,.8,.2,1) both; transition: border-color .15s, box-shadow .15s; } .mff-card:hover { border-color: #C9A45C; } .mff-card.mff-sel { border-color: #C9A45C; box-shadow: 0 0 0 2px #C9A45C, 0 5px 12px rgba(31,58,84,.2); }
+ @keyframes mffSlide { from { opacity: 0; transform: translateX(46px); } to { opacity: 1; transform: none; } }
+ .mff-card-name { font-size: 12.5px; font-weight: 700; color: #1F3A54; margin: 8px 0 4px; line-height: 1.25; min-height: 32px; } .mff-card-price { font-size: 15px; font-weight: 800; color: #6E7F5C; }
+ .mff-arr { position: absolute; top: 40%; width: 30px; height: 30px; border-radius: 50%; border: 0; background: #1F3A54; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.3); z-index: 2; } .mff-arr:hover { background: #C9A45C; } .mff-l { left: 0; } .mff-r { right: 0; }
+ @media (hover: none) { .mff-arr { display: none; } } @media (hover: hover) { .mff-track { scroll-snap-type: none; } }
+ .mff-tip { text-align: center; font-size: 11.5px; color: #6E7F5C; padding: 0 14px; } .mff-pdetail { margin: 10px 14px 0; padding: 12px 14px; background: #F1EBDA; border-radius: 8px; border-left: 4px solid #C9A45C; font-size: 13px; line-height: 1.6; color: #2A2620; white-space: pre-line; animation: mffFade .3s ease both; } .mff-pdetail b { display: block; color: #1F3A54; font-size: 14px; margin-bottom: 4px; } .mff-pdetail i { color: #6E7F5C; }
+ @keyframes mffFade { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+ .mff-lightbox { position: fixed; inset: 0; background: rgba(20,30,40,.82); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 9999; padding: 16px; cursor: zoom-out; } .mff-lightbox.mff-open { display: flex; } .mff-lightbox-img { background: #fff; border-radius: 8px; max-width: 92%; max-height: 78%; width: auto; height: auto; min-width: 240px; object-fit: contain; padding: 10px; } .mff-lightbox-cap { color: #F6F1E4; font-size: 14px; font-weight: 600; margin-top: 12px; text-align: center; } .mff-lightbox-x { position: absolute; top: 10px; right: 16px; color: #F6F1E4; font-size: 30px; line-height: 1; } .mff-brand-word, .mff-brand-name { overflow-wrap: anywhere; padding-left: 4px; padding-right: 4px; } .mff-navy .mff-brand-logo { background: linear-gradient(135deg, #1F3A54 0%, #2c4b76 100%); padding: 8px 10px; border-bottom: 3px solid #C9A45C; } .mff-navy .mff-brand-word { color: #fff; font-size: 15.5px; letter-spacing: .2px; line-height: 1.25; } .mff-navy .mff-brand-name { min-height: 30px; padding: 6px 4px; } .mff-navy .mff-brand.mff-active:after { top: 4px; right: 4px; width: 16px; height: 16px; font-size: 10px; } .mff-navy .mff-brand-logo { padding: 8px 14px; } .mff-navy .mff-brand-word { font-size: 14.5px; }.mff-other{margin:14px 4px 4px;border-top:2px solid #C9A45C;padding-top:10px}.mff-other-h{font:700 15px Georgia,serif;color:#1F3A54;margin-bottom:6px}.mff-o{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;margin:0 0 6px;background:#fff;border:1px solid #dfe5ee;border-left:4px solid #C9A45C;border-radius:8px;text-decoration:none;color:#1F3A54;font:600 14px Arial,sans-serif}.mff-o:hover{background:#FFF9EA}.mff-o em{font-style:normal;font-weight:700;color:#8a6a1f;white-space:nowrap;font-size:13px}.mff-o-more{justify-content:center;background:#1F3A54;color:#fff;border-color:#1F3A54}.mff-o-more:hover{background:#2c5282}.mff-noanim .mff-card{animation:none!important}.mff-card{animation-fill-mode:backwards!important;transition:border-color .2s,box-shadow .2s,transform .25s cubic-bezier(.2,.8,.2,1)}.mff-card.mff-sel{transform:translateY(-3px)}.mff-pop{will-change:opacity,transform}@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}} .mff-ob{display:none;margin:12px auto 0;padding:9px 18px;border:0;border-radius:999px;background:#fff;color:#1F3A54;font:700 14px inherit;font-family:inherit;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}.mff-ob.mff-show{display:inline-block}.mff-ob:hover{transform:translateY(-1px)}.mff-ob.mff-bump{animation:mffBump .35s}.mff-ob b{background:#C9A45C;color:#1F3A54;border-radius:999px;padding:1px 8px;margin-left:4px}@keyframes mffBump{40%{transform:scale(1.08)}}
+ .mff-op{display:none;margin:0 0 16px;border:1px solid #e4dcc8;border-radius:14px;background:#fff;box-shadow:0 6px 22px rgba(31,58,84,.14);overflow:hidden}.mff-op.mff-open{display:block;animation:mffUp .3s ease both}@keyframes mffUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+ .mff-op-h{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:linear-gradient(135deg,#1F3A54,#2c4b76);color:#fff;font-weight:700;font-size:16px;border-bottom:3px solid #C9A45C}.mff-op-h button{background:none;border:0;color:#fff;font-size:14px;cursor:pointer;font-family:inherit}
+ .mff-op-b{padding:14px 16px}.mff-ol{margin:0 0 10px}.mff-oi{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #eee}.mff-oi-n{flex:1;font-size:14px;color:#1F3A54;font-weight:600;line-height:1.3}.mff-oi-n small{display:block;color:#777;font-weight:400}.mff-q{display:flex;align-items:center;gap:2px}.mff-q button{width:30px;height:30px;border-radius:50%;border:1px solid #d9cfb5;background:#faf6ea;color:#1F3A54;font-size:17px;cursor:pointer;line-height:1;font-family:inherit}.mff-q span{min-width:24px;text-align:center;font-weight:700;color:#1F3A54}.mff-oi-x{background:none;border:0;color:#a33;font-size:12px;cursor:pointer;font-family:inherit;padding:4px}
+ .mff-ot{display:flex;justify-content:space-between;font-weight:700;color:#1F3A54;padding:8px 0 4px;font-size:15px}.mff-tx{font-size:12px;color:#777;text-align:right;margin:0 0 6px}.mff-ot.mff-sub{font-weight:400;font-size:13.5px;padding:3px 0}.mff-ot.mff-sub+.mff-ot:not(.mff-sub){border-top:1px solid #eee;margin-top:4px}.mff-on{background:#FFF9EA;border:1px solid #eadfbd;border-radius:10px;padding:10px 12px;font-size:13px;color:#4b4b4b;line-height:1.45;margin:6px 0 12px}
+ .mff-of label{display:block;font-size:12.5px;font-weight:700;color:#1F3A54;margin:9px 0 3px}.mff-of input,.mff-of select,.mff-of textarea{width:100%;padding:10px 12px;border:1px solid #cfc6ad;border-radius:9px;font:15px inherit;font-family:inherit;background:#fff}.mff-of textarea{min-height:60px;resize:vertical}.mff-of input:focus,.mff-of textarea:focus{outline:2px solid #C9A45C;border-color:#C9A45C}
+ .mff-send{width:100%;margin-top:14px;padding:13px;border:0;border-radius:999px;background:#C9A45C;color:#1F3A54;font:800 15px inherit;font-family:inherit;cursor:pointer;transition:transform .15s,opacity .2s}.mff-send:hover{transform:translateY(-1px)}.mff-send[disabled]{opacity:.6;cursor:default;transform:none}.mff-os{font-size:13px;margin-top:8px;min-height:18px}.mff-os.mff-err{color:#a33}
+ .mff-add{margin-top:12px;padding:10px 18px;border:0;border-radius:999px;background:#1F3A54;color:#fff;font:700 14px inherit;font-family:inherit;cursor:pointer;transition:transform .15s,background .2s}.mff-add:hover{transform:translateY(-1px)}.mff-add.mff-added{background:#2e7d4f}.mff-vo{display:inline-block;margin:12px 0 0 12px;font-size:13.5px;font-weight:700;color:#1F3A54;text-decoration:underline;cursor:pointer}
+ .mff-done{padding:26px 18px;text-align:center;color:#1F3A54}.mff-done h3{margin:0 0 8px;font-size:20px}.mff-done p{margin:6px 0;font-size:14.5px;line-height:1.5}.mff-hp{position:absolute;left:-9999px;opacity:0}
+ .mff-pr{display:flex;align-items:center;justify-content:space-between}.mff-qa{width:30px;height:30px;border-radius:50%;border:0;background:#1F3A54;color:#fff;font:700 20px/1 inherit;font-family:inherit;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s;flex:0 0 auto}.mff-qa:hover{transform:scale(1.1);background:#C9A45C;color:#1F3A54}.mff-qa.mff-ok{background:#2e7d4f;color:#fff;transform:scale(1.12)}
+ @media (prefers-reduced-motion:reduce){.mff-op.mff-open,.mff-ob.mff-bump{animation:none}}
+</style>
+
+  <div class="mff-hero">
+    <div class="mff-hero-title">Find the Right Hay Bales</div>
+    <div class="mff-hero-sub">Search by name, or pick a type below</div>
+    <div class="mff-search-input-wrap">
+      <span class="mff-search-icon">&#128269;</span>
+      <input type="text" id="mff-input" class="mff-search-input" placeholder="Search Hay Bales products...">
+    </div><a id="mff-all" target="_top" href="/" style="display:none;margin:10px auto 0;padding:8px 18px;border-radius:999px;background:#C9A45C;color:#1F3A54;font-size:13px;font-weight:700;text-decoration:none">Search the whole store &rarr;</a>
+  <button type="button" id="mff-ob" class="mff-ob">&#128722; Your order list <b id="mff-obn">0</b></button>
+  </div>
+  <div id="mff-op" class="mff-op"></div>
+  <div class="mff-brand-label">Browse by type</div>
+
+  <div class="mff-search-filters mff-navy" id="mff-filters"></div>
+</div>
+
+<script>
+(function() {
+var PRODUCTS = [{"n":"Alfalfa Block 1200#","p":"420.00","b":"Round Rolls & Blocks","desc":"What it is: A large compressed block of alfalfa hay, designed for free-choice pasture/range feeding of cattle or horses without a hay ring."},{"n":"Alfalfa Block 925#","p":"335.00","b":"Round Rolls & Blocks","desc":"What it is: A large compressed block of alfalfa hay, designed for free-choice pasture/range feeding of cattle or horses without a hay ring."},{"n":"Coastal Hay (Georgia)","p":"11.99","b":"Two-Tie Bales","desc":"What it is: A fine-stemmed variety of Bermuda grass, common and inexpensive throughout the Southeast (45-60# bale)."},{"n":"Peanut Hay (premium)","p":"21.99","b":"Two-Tie Bales","desc":"What it is: Made from perennial peanut, a warm-season legume, nutritionally similar to alfalfa (higher protein/calcium than grass hays). 45-60# bale."},{"n":"Round Roll","p":"112.99","b":"Round Rolls & Blocks","desc":"What it is: A large round bale (48\", 600-800#), typically Bermuda/coastal grass hay - used for pasture-fed cattle and horses."},{"n":"Straw","p":"10.99","b":"Two-Tie Bales","desc":"What it is: Dried stalks left over after a grain crop is harvested - low in nutritional value. 45-60# bale."},{"n":"Three Tie Alfalfa","p":"50.99","b":"Three-Tie Bales","desc":"What it is: Pure alfalfa hay, a legume - higher protein and calcium than any grass hay. 110-120# bale."},{"n":"Three Tie Orchard","p":"51.99","b":"Three-Tie Bales","desc":"What it is: Pure orchard grass hay - nutritionally comparable to timothy, often less dusty and more palatable. 110-120# bale."},{"n":"Three Tie Teff","p":"52.99","b":"Three-Tie Bales","desc":"What it is: A warm-season annual grass, increasingly popular as a low-sugar/low-NSC alternative to coastal Bermuda. 110-120# bale."},{"n":"Three Tie Timothy","p":"51.99","b":"Three-Tie Bales","desc":"What it is: Pure timothy grass hay - one of the most widely recommended hays for horses, low-dust and palatable. 110-120# bale."},{"n":"Two Tie Canadian Alfalfa","p":"20.99","b":"Two-Tie Bales","desc":"What it is: Pure alfalfa hay, a legume - higher protein and calcium than any grass hay. 45-60# bale."},{"n":"Two Tie Canadian O/A","p":"19.50","b":"Two-Tie Bales","desc":"What it is: A blend of orchard grass and alfalfa - combines the fiber of a grass hay with the extra protein/calcium of a legume. 45-60# bale."},{"n":"Two Tie Canadian T/A","p":"18.99","b":"Two-Tie Bales","desc":"What it is: A blend of timothy and alfalfa, same middle-ground logic as the Orchard/Alfalfa mix. 45-60# bale."},{"n":"Two Tie Canadian Timothy","p":"23.99","b":"Two-Tie Bales","desc":"What it is: Pure timothy grass hay - one of the most widely recommended hays for horses, low-dust and palatable. 45-60# bale."},{"n":"Two Tie Prem Orchard","p":"23.99","b":"Two-Tie Bales","desc":"What it is: Pure orchard grass hay - nutritionally comparable to timothy, often preferred for being less dusty. 45-60# bale."}];
+var _XT={1:'Protein ',2:'% min \u00b7 Fat ',3:'% min \u00b7 Fiber ',4:'% max\nIngredients: '};PRODUCTS.forEach(function(p){if(p.desc)p.desc=p.desc.replace(/@([1-4])/g,function(m,k){return _XT[k]})});
+var brands = Array.from(new Set(PRODUCTS.map(function(p) { return p.b || 'Other'; }))).sort();
+var activeBrand = 'All', allOpen = false;
+var openIndex = null;
+var filtersEl = document.getElementById('mff-filters');
+var inputEl = document.getElementById('mff-input');
+var BRAND_LOGOS = {'Badlands Ranch':'logo-badlands-ranch.png','Diamond Naturals':'logo-diamond-naturals.png','Dr. Marty':'logo-dr-marty.png','Earthborn Holistic':'logo-earthborn-holistic.png','Purina Exclusive':'logo-purina-exclusive.png','SportMix':'logo-sportmix.png','Taste of the Wild':'logo-taste-of-the-wild.png','Valu Pak':'logo-valu-pak.png'};
+var BRAND_BG = {'Badlands Ranch':'#ffffff','Diamond Naturals':'#000000','Dr. Marty':'#ffffff','Earthborn Holistic':'#eae4d8','Purina Exclusive':'#000000','SportMix':'#ee1b2e','Taste of the Wild':'#ffffff','Valu Pak':'#ffffff'};
+var LOGO_BASE = 'https://img1.wsimg.com/isteam/ip/abdc1752-9b46-4aae-9a5c-918e694df4f1/';
+var brandCounts = {};
+PRODUCTS.forEach(function(p) { var k = p.b || 'Other'; brandCounts[k] = (brandCounts[k] || 0) + 1; });
+window.mffLogoFail = function(el) { el.parentNode.innerHTML = '<span class="mff-brand-word">' + el.getAttribute('data-word') + '</span>'; };
+function makeChip(label) {
+var isAll = (label === 'All');
+var count = isAll ? PRODUCTS.length : (brandCounts[label] || 0);
+var shown = isAll ? 'Show All' : label;
+var chip = document.createElement('div');
+chip.className = 'mff-brand' + (label === activeBrand ? ' mff-active' : ''); chip.setAttribute('data-l', label);
+var logoHtml;
+if (isAll) {
+logoHtml = '<span class="mff-brand-word">Show All</span>';
+} else if (BRAND_LOGOS[label]) {
+logoHtml = '<img src="' + LOGO_BASE + encodeURIComponent(BRAND_LOGOS[label]) + '/:/rs=w:300?v=1" alt="' + escapeHtml(label) + '" data-word="' + escapeHtml(label) + '" onerror="mffLogoFail(this)">';
+} else {
+logoHtml = '<span class="mff-brand-word">' + escapeHtml(label) + '</span>';
+}
+chip.innerHTML = '<div class="mff-brand-logo"' + (BRAND_LOGOS[label] && BRAND_BG[label] ? ' style="background:' + BRAND_BG[label] + ';padding:0;"' : '') + '>' + logoHtml + '</div><div class="mff-brand-name">' + '<span>' + count + (count === 1 ? ' item' : ' items') + '</span></div>';
+chip.addEventListener('click', function() {
+activeBrand = (activeBrand === label && label !== 'All') ? 'All' : label; allOpen = (label === 'All');
+markChips();
+renderPop(activeBrand !== 'All');
+});
+return chip;
+}
+function renderFilters() {
+filtersEl.innerHTML = '';
+filtersEl.appendChild(makeChip('All'));
+brands.forEach(function(b) { filtersEl.appendChild(makeChip(b)); });
+}
+function escapeHtml(s) {
+return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+var IMG_BASE = 'https://img1.wsimg.com/isteam/ip/abdc1752-9b46-4aae-9a5c-918e694df4f1/';
+var IMG_SIZE = '/:/rs=w:300?v=2';
+var IMAGES = {};
+window.mffImgFail = function(el) { el.parentNode.innerHTML = '<span class="mff-thumb-empty">&#128062;</span>'; };
+function thumbHtml(name) {
+var f = IMAGES[name];
+if (!f) return Object.keys(IMAGES).length ? '<div class="mff-thumb"><span class="mff-thumb-empty">&#128062;</span></div>' : '';
+return '<div class="mff-thumb"><img src="' + IMG_BASE + encodeURIComponent(f) + IMG_SIZE + '" alt="' + escapeHtml(name) + '" title="Tap to enlarge" decoding="async" onerror="mffImgFail(this)"></div>';
+}
+var labelEl = document.querySelector('.mff-brand-label');
+var popEl = document.createElement('div');
+var shownList = [];
+function placePop() {
+var q = inputEl.value.trim();
+if (activeBrand === 'All') {
+if (q === '' && !allOpen) { mffClose(); return false; }
+if (popEl.nextElementSibling !== labelEl) labelEl.parentNode.insertBefore(popEl, labelEl); return true;
+}
+var tiles = filtersEl.querySelectorAll('.mff-brand'), idx = 0;
+tiles.forEach(function(t, i) { if (t.classList.contains('mff-active')) idx = i; });
+var cols = getComputedStyle(filtersEl).gridTemplateColumns.split(' ').length;
+var end = Math.min(tiles.length - 1, (Math.floor(idx / cols) + 1) * cols - 1);
+if (popEl.parentNode !== filtersEl || popEl.previousElementSibling !== tiles[end]) filtersEl.insertBefore(popEl, tiles[end].nextSibling);
+return true;
+}
+var DEPT = "Hay Bales", OT = [];
+([["Horse Feed","/horse-feed",[["Seminole",["Alfalfa Cubes","Alfalfa Pellets","Equalizer","Exacta 10","Exacta 12","Exacta 14","Profecta 10","Profecta 12","Profecta 14","Seminole T/A Cubes","Senior Seminole","Timothy Pellets","Ultra Bloom","Ultra Dynamix 14% Pellet","Wellness Calm and Cool","Wellness DynaSport","Wellness Grow Right","Wellness Herbal Blend","Wellness Perform Safe","Wellness Safe n Lite","Wellness Senior Mix (Shiny Bag)","Wellness Sporthorse"]],["Triple Crown",["Triple Crown Balancer Gold","Triple Crown Complete","Triple Crown Golden Flax","Triple Crown Growth","Triple Crown Lite Pellet 12%","Triple Crown Low Starch","Triple Crown Ration Balancer 30","Triple Crown Safe Starch Forag","Triple Crown Senior","Triple Crown Senior Gold","Triple Crown Stress Free","Triple Crown Timothy Cubes"]],["Purina",["Omolene 200","Omolene 300","Omolene 400","Country Acres All Stock Feed","Purina Amplify","Purina Enrich +","Purina Enrich Senior +","Purina Equine Senior","Purina Impact 12-6 Pellet","Purina Mini Horse & Pony","Purina Omolene 100 Pleasure","Purina Outlast","Purina Strategy GX","Purina Strategy Healthy Edge","Purina Supersport","Purina Ultium Comp","Purina Ultium Gastric Care","Purina Ultium Growth","Purina Ultium Senior","Purina Wellsolve Low Starch","Purina Replenimash"]],["Nutrena",["Empower Boost","Empower Topline Balancer","Pro Force Fuel","Pro Force Senior","SafeChoice Maintenance","SafeChoice Original","SafeChoice Senior","Southeast Sweet Feed 11%"]]]],["Dog Food","/dog-food",[["Badlands Ranch",["Badlands Ranch Beef","Badlands Ranch Chicken","Badlands Ranch lamb and venison"]],["Diamond Naturals",["Dia Hi Energy Dog","Dia Nat Adult dog 20# (Lamb/Rice)","Dia Nat Adult dog 40# (Lamb meal/Rice)","Dia Nat Adult dog 6# (Lamb meal/Rice)","Dia Nat All Life Stages 40# (Chicken/Rice)","Dia Nat Beef Dinner Wet Dog Food","Dia Nat Chicken Dinner Wet Dog Food","Dia Nat Extreme Athlete","Dia Nat Lamb Dinner Can Dog","Dia Nat Large Breed Adult Dog 40# (Chicken/Rice)","Dia Nat Large Breed Adult Dog 40# (Lamb/Rice)","Dia Nat Large Breed Puppy 20# (Lamb/Rice)","Dia Nat Large Breed Puppy 40# (Lamb/Rice)","Dia Nat Light Adult 30# (Lamb meal/Rice)","Dia Nat Light Adult dog 15# (lamb meal/rice)","Dia Nat Senior 18# (chicken, egg, oatmeal)","Dia Nat Senior 35# (chicken, egg, oatmeal)","Dia Nat Senior 6# (chicken, egg, oatmeal)","Dia Nat Skin & Coat","Dia Nat Small Breed Adult 6# (Lamb & Rice)","Dia Nat Small Breed Adult Chicken/Rice","Dia Nat Small Breed Adult Dog 6# (Chicken/Rice)","Dia Nat Small Breed Adult dog 18# (Lamb/Rice)","Dia Nat Small/Medium Breed Puppy 18# (Chicken/Rice)","Dia Nat Small/Medium Breed Puppy 40# (Chicken/Rice)","Dia Nat Small/Medium Breed Puppy 6# (Chicken & Rice)","Dia Nat adult dog 40# (Beef/Rice)","Dia Premium Adult Dog","Dia Pro 89"]],["Dr. Marty",["Dr Marty Active Vitality","Dr Marty Essential Wellness","Dr Marty Healthy Digestion","Dr Marty Sensitivity Select","Dr Marty Small Breed"]],["Earthborn Holistic",["Earthborn Coastal Catch","Earthborn Meadow Feast"]],["Purina Exclusive",["Purina Exclusive Signature Adult Dog Chicken and Brown Rice","Purina Exclusive Signature Lamb/Brown Rice (all life stages)","Purina Exclusive Signature SENIOR Dog"]],["Taste of the Wild",["ToW Ancient Mountain","ToW Ancient Prairie","ToW Ancient Stream","ToW Ancient Wetlands","ToW Appalachian Valley","ToW High Prairie","ToW High Prairie Can","ToW Pacific Stream","ToW Pacific Stream Can","ToW Pine Forest","ToW Puppy High Prairie","ToW Puppy Pacific Stream","ToW Sierra Mountain","ToW Sierra Mountain Can","ToW Sierra Mtn","ToW Southwest Canyon","ToW Southwest Canyon Can","ToW Wetlands","ToW Wetlands Can"]],["Valu Pak",["Valu Pak Black Bag","Valu Pak Blue Bag","Valu Pak Brown Bag 50# 21/12","Valu Pak Gray Bag 50# 24/20","Valu Pak Orange Bag","Valu Pak Purple 50# 30/20","Valu Pak Red Bag 50# 24/20","Valu Pak Dominator"]],["SportMix",["SportMix Bacon","SportMix Chicken and Veggie","SportMix Essentials"]]]],["Cat Food","/cat-food",[["Diamond Naturals",["Dia Nat Active Cat","Dia Nat Chicken Dinner Wet Cat Food","Dia Nat Indoor Cat","Dia Nat Indoor Cat Canned","Dia Nat Kitten Chicken&Rice","Dia Nat Whitefish for Adult Cats & Kittens"]],["Earthborn Holistic",["Earthborn Holistic Catalina Catch Can","Earthborn Holistic Chicken Cacciatori Can","Earthborn Holistic Chicken Fricassee Can","Earthborn Holistic Chicken Jumble With Liver Can","Earthborn Holistic Harbor Harvest Can","Earthborn Holistic Monterey Medley Can","Earthborn Holistic Primitive Feline","Earthborn Holistic Wild Sea Catch"]],["Purina",["Purina Country Acres Farm Cat","Purina Red Flannel Cat"]],["Taste of the Wild",["ToW Canyon River Can","ToW Canyon River Feline","ToW PREY Turkey for Cat","ToW Rocky Mountain","ToW Rocky Mountain Feline","ToW Rocky Mtn. Can"]]]],["Poultry","/poultry",[["Treats",["Blackoil Sunflower","Blackoil Sunflower Seeds","Cracked Corn","Happy Hen Treat Square (any flavor)","Mealworms","Organic Scratch","Purina Flock Block","Purina Scratch","Scratch (Any Brand)","Scratch","Striped Sunflower"]],["Chickens",["Layer Crumbles","Layer Pellets","Organic Layer (NO CORN)","Organic Layer Feed","Organic layer W/Olive oil","Purina Layena Crumble","Purina Layena Pellet","Organic (Pasture) Grower/Broiler","Organic Grower/Broiler","Organic Essential Layer Pellet"]],["Chicks",["Organic Starter","Starter Grower","Starter Grower Medicated","Starter/Grower"]],["Ducks/Gamebirds/Turkeys",["All Flock Pellet","Duck Food","Gamebird Grower Crumbles","Nutrena Duck Food","Nutrena Gamebird Crumble 21%","Organic Duck Layer"]]]],["Livestock","/livestock",[["Cattle",["Cattle Pellet Stocker","Syf Cattle Cube"]],["Pig",["Mazuri Mini Pig Adult","Mazuri Mini Pig Mature Maintenance (Elder)","Mazuri Mini Pig Youth","Mini Pig Skin and Coat Mannapro","Syf Pig Food","Whole Corn"]],["Sheep & Goat",["Purina Goat Chow","Syf Sheep and Goat Pellets"]]]],["Birds","/birds",[["Parrot, Parakeet & Cockatiel",["(Alligator Brand) Vita Cockatiel","(Alligator Brand) Vita Parakeet","(Alligator Brand) Vita Parrot","Higgins Spray Millet (12)","Higgins Sunburst Parrot","Higgins Supreme Cockatiel #50","Higgins Vita Cockatiel","Higgins Vita Parakeet","Higgins Vita Parrot","Higgins Vita Seed Cockatiel Bird Food","Supreme Parakeet","Vita Cockatiel","Vita Parakeet","Vita Parrot","ZuPreem Fruitblend Large","ZuPreem Fruitblend M/LG 3.5# Parrots/Conures"]],["Pigeon, Dove & Finch",["Higgins Vita Dove","Higgins Vita Finch","Pigeon Seed","Supreme Pigeon","Vita Dove","Vita Finch Seed","red pigeon grit"]],["Wild Birds",["Raw Peanuts","Raw Peanuts 50# - Virginia","Suet Veryberry","White Millet","Wild Bird #20","Wild Bird Seed","raw peanuts"]]]],["Small Animals & Fish","/small-animals-%26-fish",[["Rabbit & Guinea Pig",["Bunny Bale Timothy","Higgins Sunburst Guinea Pig","Higgins Sunburst Rabbit","Organic Rabbit","Rabbit","Rabbit Food","Sunburst Guinea Pig"]],["Fish",["Floating Fish Food","Mazuri Koi Pond Nuggets","Purina Tropical Fish chow"]],["Rodent & Squirrel",["Mazuri Rodent Breeder Cubes"]]]],["Shavings & Bedding","/shavings",[["Loose Hay",["Bagged Hay Loose"]],["Pine Shavings - Fine",["Derby Gold FINE","Queen Easy Sift Shavings","Suncoast Fine Shavings"]],["Hemp Shavings",["Hurdz Hemp Shavings"]],["Pine Shavings - Flake",["King Flake (Large)","Queen Medium Flake"]],["Pellets",["Stall Pellets (Pine)"]]]]]).forEach(function(g) { g[2].forEach(function(r) { r[1].forEach(function(s) { OT.push({n: s, b: r[0], d: g[0], u: g[1]}); }); }); });
+function mffB(n) { return n.replace(/\s*\(?\b\d+(\.\d+)?\s?(#|lb|lbs|oz|kg)\)?\s*$/i, ''); }
+var ALL = PRODUCTS.concat(OT);
+function mffO(T) { var seen = {}, r = []; PRODUCTS.forEach(function(p) { seen[mffB(p.n)] = 1; }); OT.forEach(function(o) { if (seen[o.n]) return; if (T.every(function(w) { return mffH(mffW(o), w); })) { seen[o.n] = 1; r.push(o); } }); r.sort(function(a, b) { return (a.n.toLowerCase().indexOf(T[0]) === 0 ? 0 : 1) - (b.n.toLowerCase().indexOf(T[0]) === 0 ? 0 : 1); }); return r; }
+function mffOH(r) { if (!r.length) return ''; var s = r.slice(0, 10); return '<div class="mff-other"><div class="mff-other-h">Also found in other departments</div>' + s.map(function(o) { return '<a class="mff-o" target="_top" href="' + o.u + '#f=' + encodeURIComponent(o.n) + '"><span>' + escapeHtml(o.n) + '</span><em>' + escapeHtml(o.d) + ' &rsaquo;</em></a>'; }).join('') + (r.length > 10 ? '<a class="mff-o mff-o-more" target="_top" href="/#s=' + encodeURIComponent(inputEl.value.trim()) + '"><span>See ' + (r.length - 10) + ' more in the whole store</span><em style="color:#fff">&rsaquo;</em></a>' : '') + '</div>'; }
+var SW = {feed:1,food:1,for:1,the:1,and:1,of:1,a:1,bag:1,bags:1,any:1,i:1,need:1,want:1}, SY = {cow:'cattle',cows:'cattle',calf:'cattle',calves:'cattle',hog:'pig',hogs:'pig',pigs:'pig',piglet:'pig',bunny:'rabbit',bunnies:'rabbit',hamster:'rodent',gerbil:'rodent',mouse:'rodent',rat:'rodent',squirrel:'rodent',budgie:'parakeet',hen:'chicken',hens:'chicken',rooster:'chicken',chickens:'chicken',horses:'horse',pony:'horse',ducks:'duck',turkeys:'turkey',goats:'goat',lambs:'sheep',dogs:'dog',cats:'cat',puppies:'puppy',kittens:'kitten',shaving:'shavings'}, WD = null;
+function mffW(p) { return (p.n + ' ' + (p.b || '')).toLowerCase().split(/[^a-z0-9#]+/); }
+function mffH(ws, w) { var a = SY[w] || w; return ws.some(function(x) { return x.indexOf(a) === 0 || (a.length > 3 && x.indexOf(a.replace(/s$/, '')) === 0); }); }
+function mffE(a, b) { var d = [], i, j; for (i = 0; i <= a.length; i++) d[i] = [i]; for (j = 1; j <= b.length; j++) d[0][j] = j; for (i = 1; i <= a.length; i++) for (j = 1; j <= b.length; j++) { d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] == b[j-1] ? 0 : 1)); if (i > 1 && j > 1 && a[i-1] == b[j-2] && a[i-2] == b[j-1]) d[i][j] = Math.min(d[i][j], d[i-2][j-2] + 1); } return d[a.length][b.length]; }
+function mffF(w) { if (w.length < 4 || SY[w] || /\d/.test(w)) return w; if (!WD) { WD = {}; ALL.forEach(function(p) { mffW(p).forEach(function(x) { if (x.length > 2) WD[x] = 1; }); }); } var best = w, bd = 9, k, x, l = w.length > 6 ? 2 : 1; for (k in WD) { if (Math.abs(k.length - w.length) > l) continue; x = Math.min(mffE(w, k), k.length > w.length ? mffE(w, k.slice(0, w.length)) : 9); if (x <= l && x < bd) { bd = x; best = k; } } return best; }
+function mffT(q) { var t = q.replace(/[^a-z0-9# ]/g, ' ').split(/\s+/).filter(function(w) { return w && !SW[w]; }); if (t.length && !ALL.some(function(p) { var ws = mffW(p); return t.every(function(w) { return mffH(ws, w); }); })) t = t.map(mffF); return t; }
+function mffSettle(cb) { var f = window.frameElement, n = 0, last = -1, t0 = Date.now(); (function tick() { var h = document.documentElement.scrollHeight, ok = !f || f.getBoundingClientRect().height >= h - 4; if (ok && h === last) n++; else n = 0; last = h; if (n >= 2 || Date.now() - t0 > 900) cb(); else setTimeout(tick, 60); })(); }
+function mffGo(el, tail) { mffSettle(function() { if (!el.isConnected) return; var T = el.closest('.mff-track'); if (T) { var tl = T.scrollLeft + el.getBoundingClientRect().left - T.getBoundingClientRect().left - (T.clientWidth - el.offsetWidth) / 2; T.scrollTo({ left: Math.max(0, tl), behavior: 'smooth' }); } var a = el.getBoundingClientRect(), b = (tail || el).getBoundingClientRect(), top = a.top, ht = b.bottom - a.top, f = window.frameElement; if (f && parent !== window) { var ph = parent.innerHeight, base = f.getBoundingClientRect().top + parent.pageYOffset + top, dest = ht > ph * 0.86 ? base - ph * 0.08 : base - (ph - ht) / 2; parent.scrollTo({ top: Math.max(0, dest), behavior: 'smooth' }); } else { var ph2 = window.innerHeight, d2 = ht > ph2 * 0.86 ? window.pageYOffset + top - ph2 * 0.08 : window.pageYOffset + top - (ph2 - ht) / 2; window.scrollTo({ top: Math.max(0, d2), behavior: 'smooth' }); } }); }
+function markChips() { filtersEl.querySelectorAll('.mff-brand').forEach(function(c) { c.classList.toggle('mff-active', c.getAttribute('data-l') === activeBrand); }); }
+function mffClose() { if (!popEl.parentNode) return; popEl.classList.remove('mff-in'); setTimeout(function() { if (!popEl.classList.contains('mff-in') && popEl.parentNode) popEl.parentNode.removeChild(popEl); }, 280); }
+function renderPop(anim) {
+var q = inputEl.value.trim().toLowerCase();
+var T = mffT(q);
+var m = PRODUCTS.filter(function(p) {
+if (activeBrand !== 'All' && (p.b || 'Other') !== activeBrand) return false;
+return q === '' || T.every(function(w) { return mffH(mffW(p), w); });
+});
+m.sort(function(a, b) { return parseFloat(a.p) - parseFloat(b.p); });
+shownList = m.slice(0, 60);
+var om = (activeBrand === 'All' && q !== '') ? mffO(T) : [];
+if (!placePop()) return;
+var title = activeBrand === 'All' ? (q === '' ? 'All products' : 'Search results in ' + DEPT) : escapeHtml(activeBrand);
+var h = '<div class="mff-pop-head"><span><strong>' + title + '</strong> &middot; ' + m.length + (m.length === 1 ? ' product' : ' products') + '</span>' + (activeBrand === 'All' && q !== '' ? '' : '<button class="mff-pop-x">Close &#10005;</button>') + '</div>';
+if (!m.length) {
+h += om.length ? '<div class="mff-empty">Nothing in ' + DEPT + ' matches, but we found these in other departments:</div>' : '<div class="mff-empty">Nothing here matches. <a target="_top" href="/#s='+encodeURIComponent(q)+'">Search the whole store</a></div>';
+} else {
+h += '<div class="mff-trackwrap"><button class="mff-arr mff-l" aria-label="Previous">&#8249;</button><div class="mff-track">' + shownList.map(function(p, i) {
+return '<div class="mff-card" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 45 + 'ms">' + thumbHtml(p.n) + '<div class="mff-card-name">' + escapeHtml(p.n) + '</div><div class="mff-card-price mff-pr"><span>$' + escapeHtml(p.p) + '</span>' + mffQa(p) + '</div></div>';
+}).join('') + '</div><button class="mff-arr mff-r" aria-label="Next">&#8250;</button></div><div class="mff-tip">&#8596; Swipe or use the arrows &middot; tap a product for ingredients &amp; feeding info</div><div class="mff-detailslot"></div>';
+}
+h += mffOH(om);
+var open = !!popEl.parentNode && popEl.classList.contains('mff-in');
+if (!anim && open && popEl.__h === h) return;
+popEl.__h = h;
+popEl.className = 'mff-pop' + (open && !anim ? ' mff-noanim mff-in' : '');
+popEl.innerHTML = h;
+if (!(open && !anim)) requestAnimationFrame(function() { requestAnimationFrame(function() { popEl.classList.add('mff-in'); }); });
+if (anim) mffGo(popEl);
+}
+popEl.addEventListener('click', function(e) {
+var t = e.target;
+if (mffOrderClick(t)) return;
+if (t.tagName === 'IMG' && t.parentNode.className === 'mff-thumb') {
+lb.querySelector('img').src = t.src.replace('rs=w:300','rs=w:900');
+lb.querySelector('.mff-lightbox-cap').textContent = t.alt;
+lb.classList.add('mff-open');
+return;
+}
+var tr = popEl.querySelector('.mff-track');
+if (t.closest('.mff-pop-x')) { activeBrand = 'All'; allOpen = false; markChips(); renderPop(); return; }
+if (t.closest('.mff-l')) { tr.scrollBy({ left: -tr.clientWidth * 0.85, behavior: 'smooth' }); return; }
+if (t.closest('.mff-r')) { tr.scrollBy({ left: tr.clientWidth * 0.85, behavior: 'smooth' }); return; }
+var card = t.closest('.mff-card');
+if (!card) return;
+var cards = popEl.querySelectorAll('.mff-card');
+var was = card.classList.contains('mff-sel');
+cards.forEach(function(c) { c.classList.remove('mff-sel'); });
+var slot = popEl.querySelector('.mff-detailslot');
+if (was) { slot.innerHTML = ''; return; }
+card.classList.add('mff-sel'); mffGo(card, slot);
+var p = shownList[parseInt(card.getAttribute('data-i'), 10)];
+slot.innerHTML = '<div class="mff-pdetail"><b>' + escapeHtml(p.n) + ' &mdash; $' + escapeHtml(p.p) + '</b>' + (p.desc && p.desc.trim() ? escapeHtml(p.desc) : '<i>Ingredient and feeding details for this item are still being added — call us and we can help.</i>') + mffAddBtn(p) + '</div>';
+});
+var ORDER_URL = 'https://script.google.com/macros/s/AKfycbzTX8ZW_9jTBZGbzlmQ3MHkjZrbnE_oeZ0cZGEGVCg7A4cUxn8UyWAgtbsux_4q8zoRgg/exec';
+var ORDER_KEY = '8f91c948-aedc-4e33-b92c-6126bc11ba84';
+var USE_SHEET = ORDER_URL.indexOf('PASTE') !== 0, USE_MAIL = ORDER_KEY.indexOf('PASTE') !== 0;
+var ORDER_ON = USE_SHEET || USE_MAIL;
+var CART = [], obEl = document.getElementById('mff-ob'), opEl = document.getElementById('mff-op');
+function cLoad() { try { CART = JSON.parse(localStorage.getItem('mffCart') || '[]'); } catch (e) { CART = []; } if (!Array.isArray(CART)) CART = []; }
+function cSave() { try { localStorage.setItem('mffCart', JSON.stringify(CART)); } catch (e) {} }
+function cAdd(p) { var f = CART.filter(function(i) { return i.n === p.n; })[0]; if (f) f.q++; else CART.push({ n: p.n, p: p.p, q: 1 }); cSave(); }
+function mffQa(p) { return ORDER_ON && parseFloat(p.p) ? '<button type="button" class="mff-qa" aria-label="Add to order" title="Add to order">+</button>' : ''; }
+function cCount() { return CART.reduce(function(s, i) { return s + i.q; }, 0); }
+var FEE_RATE = 0.015;
+function cSubC() { return CART.reduce(function(s, i) { return s + i.q * Math.round((parseFloat(i.p) || 0) * 100); }, 0); }
+function cFeeC() { return Math.round(cSubC() * FEE_RATE); }
+function cTotal() { return (cSubC() + cFeeC()) / 100; }
+function money(v) { return '$' + v.toFixed(2); }
+function opPill(bump) {
+if (!ORDER_ON) return;
+var c = cCount();
+obEl.classList.toggle('mff-show', c > 0);
+document.getElementById('mff-obn').textContent = c;
+if (bump) { obEl.classList.remove('mff-bump'); void obEl.offsetWidth; obEl.classList.add('mff-bump'); }
+}
+function opList() {
+var L = opEl.querySelector('.mff-ol'); if (!L) return;
+if (!CART.length) { L.innerHTML = '<div class="mff-on">Your list is empty. Tap a product, then &ldquo;Add to order&rdquo;.</div>'; }
+else L.innerHTML = CART.map(function(i, k) { return '<div class="mff-oi"><div class="mff-oi-n">' + escapeHtml(i.n) + '<small>' + money(parseFloat(i.p) || 0) + ' each</small></div><div class="mff-q"><button type="button" data-k="' + k + '" data-d="-1" aria-label="Less">&minus;</button><span>' + i.q + '</span><button type="button" data-k="' + k + '" data-d="1" aria-label="More">+</button></div><button type="button" class="mff-oi-x" data-k="' + k + '" data-d="x">Remove</button></div>'; }).join('');
+opEl.querySelector('#mff-st').textContent = money(cSubC() / 100); opEl.querySelector('#mff-fee').textContent = money(cFeeC() / 100); opEl.querySelector('#mff-tt').textContent = money(cTotal());
+opPill();
+}
+function opOpen() {
+if (!opEl.classList.contains('mff-open')) {
+opEl.innerHTML = '<div class="mff-op-h"><span>Your order request</span><button type="button" data-d="close">Close &#10005;</button></div><div class="mff-op-b"><div class="mff-ol"></div><div class="mff-ot mff-sub"><span>Subtotal</span><b id="mff-st"></b></div><div class="mff-ot mff-sub"><span>Online order fee (1.5%)</span><b id="mff-fee"></b></div><div class="mff-ot"><span>Estimated total</span><b id="mff-tt"></b></div><div class="mff-tx">Sales tax may apply to some items.</div><div class="mff-on"><b>Pickup only</b> at Malabar Feed and Farm. <b>You are not paying now.</b> We will confirm stock, then text you a Square payment link <b>during store hours</b> (Mon&ndash;Fri 8:30&ndash;5:30, Sat 8&ndash;4). Orders placed after hours are answered the next business day. Online orders include a 1.5% fee. <b>Sales tax may apply</b> to some items. Prices are estimates until confirmed. <b>Items are not set aside until payment is received.</b></div><div class="mff-of"><label>Your name *</label><input name="name" autocomplete="name"><label>Email *</label><input name="email" type="email" autocomplete="email"><label>Confirm email * (type it again)</label><input name="email2" type="email" autocomplete="off" placeholder="Same email again"><label>Mobile phone * (we text you the payment link)</label><input name="phone" type="tel" autocomplete="tel"><label>Preferred pickup day / time (optional)</label><input name="pickup" placeholder="e.g. Saturday morning"><label>Notes (optional)</label><textarea name="notes"></textarea><input class="mff-hp" name="botcheck" tabindex="-1" autocomplete="off"><button type="button" class="mff-send">Send order request</button><div class="mff-os"></div></div></div>';
+opEl.classList.add('mff-open');
+opList(); opPill();
+}
+mffGo(opEl);
+}
+function mffAddBtn(p) { return ORDER_ON && parseFloat(p.p) ? '<div><button type="button" class="mff-add" data-n="' + escapeHtml(p.n) + '">Add to order</button></div>' : ''; }
+function mffOrderClick(t) {
+var qa = t.closest('.mff-qa');
+if (qa) {
+var pq = shownList[parseInt(qa.closest('.mff-card').getAttribute('data-i'), 10)]; if (!pq) return true;
+cAdd(pq); qa.classList.add('mff-ok'); qa.innerHTML = '&#10003;';
+setTimeout(function() { qa.classList.remove('mff-ok'); qa.innerHTML = '+'; }, 1100);
+opPill(true); if (opEl.classList.contains('mff-open')) opList();
+return true;
+}
+var a = t.closest('.mff-add');
+if (a) {
+var s = popEl.querySelector('.mff-card.mff-sel'); var p = s && shownList[parseInt(s.getAttribute('data-i'), 10)]; if (!p) return true;
+cAdd(p);
+a.classList.add('mff-added'); a.textContent = '✓ Added — tap to add another';
+if (!a.parentNode.querySelector('.mff-vo')) a.insertAdjacentHTML('afterend', '<span class="mff-vo">View order list &rarr;</span>');
+opPill(true); if (opEl.classList.contains('mff-open')) opList();
+return true;
+}
+if (t.closest('.mff-vo') || t.closest('#mff-ob')) { opOpen(); return true; }
+return false;
+}
+obEl.addEventListener('click', function() { if (opEl.classList.contains('mff-open')) { opEl.classList.remove('mff-open'); opPill(); } else opOpen(); });
+opEl.addEventListener('click', function(e) {
+if (e.target.closest('.mff-send')) { opSubmit(opEl.querySelector('.mff-of')); return; }
+var b = e.target.closest('[data-d]'); if (!b) return;
+var d = b.getAttribute('data-d');
+if (d === 'close') { opEl.classList.remove('mff-open'); opPill(); return; }
+var k = parseInt(b.getAttribute('data-k'), 10), it = CART[k]; if (!it) return;
+if (d === 'x') CART.splice(k, 1); else { it.q += parseInt(d, 10); if (it.q < 1) CART.splice(k, 1); }
+cSave(); opList();
+});
+function opSubmit(f) {
+function fe(n) { return f.querySelector('[name=' + n + ']'); }
+var st = f.querySelector('.mff-os'), btn = f.querySelector('.mff-send');
+function v(n) { return (fe(n).value || '').trim(); }
+st.className = 'mff-os';
+if (fe('botcheck').value) return;
+if (!CART.length) { st.className = 'mff-os mff-err'; st.textContent = 'Your order list is empty.'; return; }
+if (!v('name')) { st.className = 'mff-os mff-err'; st.textContent = 'Please enter your name.'; fe('name').focus(); return; }
+if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) { st.className = 'mff-os mff-err'; st.textContent = 'Please enter a valid email so we can confirm your order.'; fe('email').focus(); return; }
+if (v('email').toLowerCase() !== v('email2').toLowerCase()) { st.className = 'mff-os mff-err'; st.textContent = 'The two emails do not match. Please check them so we can reach you.'; fe('email2').focus(); return; }
+if (v('phone').replace(/\D/g, '').length < 10) { st.className = 'mff-os mff-err'; st.textContent = 'Please enter your mobile number. We text you the payment link.'; fe('phone').focus(); return; }
+var lines = CART.map(function(i) { return i.q + ' x ' + i.n + ' @ ' + money(parseFloat(i.p) || 0) + ' = ' + money(i.q * (parseFloat(i.p) || 0)); }).join('\n');
+var msg = 'PICKUP ORDER REQUEST (not paid, needs your confirmation)\n\n' + lines + '\n\nSubtotal: ' + money(cSubC() / 100) + '\nOnline order fee (1.5%): ' + money(cFeeC() / 100) + '\nEstimated total: ' + money(cTotal()) + ' (before any sales tax)\n\nName: ' + v('name') + '\nEmail: ' + v('email') + '\nPhone (TEXT the payment link): ' + v('phone') + '\nPreferred pickup: ' + (v('pickup') || '-') + '\nNotes: ' + (v('notes') || '-') + '';
+btn.disabled = true; btn.textContent = 'Sending…';
+var ref = 'W' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+var items = CART.map(function(i) { return { n: i.n, p: i.p, q: i.q }; });
+var jobs = [];
+if (USE_SHEET) jobs.push(fetch(ORDER_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ ref: ref, name: v('name'), email: v('email'), phone: v('phone'), pickup: v('pickup'), notes: v('notes'), items: items, botcheck: '' }) })
+.then(function(r) { return r.json(); }).then(function(j) { return { ok: !!(j && j.ok), id: j && j.id }; }).catch(function() { return { ok: false }; }));
+if (USE_MAIL) jobs.push(fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ access_key: ORDER_KEY, subject: 'New pickup order request — ' + v('name') + ' (' + money(cTotal()) + ')', from_name: 'Malabar Feed website', name: v('name'), email: v('email'), phone: v('phone'), message: msg + '\n\nRef: ' + ref }) })
+.then(function(r) { return r.json(); }).then(function(j) { return { ok: !!(j && j.success) }; }).catch(function() { return { ok: false }; }));
+Promise.all(jobs).then(function(rs) {
+var good = rs.filter(function(r) { return r.ok; });
+if (!good.length) throw new Error('fail');
+var num = ''; good.forEach(function(r) { if (r.id) num = r.id; });
+var em = v('email'), ph = v('phone'); CART = []; cSave(); opPill();
+opEl.innerHTML = '<div class="mff-op-h"><span>Order request sent</span><button type="button" data-d="close">Close &#10005;</button></div><div class="mff-done"><h3>Thank you, ' + escapeHtml(v('name') || 'friend') + '!</h3>' + (num ? '<p>Your request number is <b>' + escapeHtml(num) + '</b>.</p>' : '') + '<p>We got your request. If everything is in stock, we will <b>text a Square payment link</b> to <b>' + escapeHtml(ph) + '</b> shortly, during business hours (Mon&ndash;Fri 8:30&ndash;5:30, Sat 8&ndash;4).</p><p>If something is out of stock, we will email <b>' + escapeHtml(em) + '</b>.</p><p>Nothing has been charged yet.</p><p><b>Please pay promptly.</b> Inventory changes, and items are not set aside until the payment is received.</p></div>';
+mffGo(opEl);
+}).catch(function() { btn.disabled = false; btn.textContent = 'Send order request'; st.className = 'mff-os mff-err'; st.textContent = 'Sorry, that did not go through. Please try again, or call us and we will take your order.'; });
+}
+cLoad(); opPill();
+var lb = document.createElement('div');
+lb.className = 'mff-lightbox';
+lb.innerHTML = '<span class="mff-lightbox-x">&times;</span><img class="mff-lightbox-img" alt=""><div class="mff-lightbox-cap"></div>';
+document.getElementById('mff-search-widget').appendChild(lb);
+function closeLb() { lb.classList.remove('mff-open'); }
+lb.addEventListener('click', closeLb);
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+var lastCols = 0, rz;
+window.addEventListener('resize', function() { clearTimeout(rz); rz = setTimeout(function() { var c = getComputedStyle(filtersEl).gridTemplateColumns.split(' ').length; if (c !== lastCols) { lastCols = c; if (popEl.parentNode) placePop(); } }, 150); });
+inputEl.addEventListener('input', function() { if (inputEl.value.trim() && activeBrand !== 'All') { activeBrand = 'All'; allOpen = false; markChips(); } renderPop(false); var v = inputEl.value.trim(), A = document.getElementById('mff-all'); A.style.display = v ? 'inline-block' : 'none'; A.href = '/#s=' + encodeURIComponent(v); });
+inputEl.addEventListener('keydown', function(e) { if (e.key === 'Enter' && inputEl.value.trim()) { inputEl.blur(); (window.top || parent).location.href = '/#s=' + encodeURIComponent(inputEl.value.trim()); } });
+renderFilters();
+renderPop(false);
+try{var H=decodeURIComponent(parent.location.hash);if(H.slice(0,3)=='#f='){H=H.slice(3);var X=PRODUCTS.filter(function(p){return p.n==H})[0]||PRODUCTS.filter(function(p){return p.n.indexOf(H)==0})[0];if(X){H=X.n;activeBrand=X.b;markChips()}renderPop(false);popEl.querySelectorAll('.mff-card').forEach(function(c){if(c.querySelector('.mff-card-name').textContent==H){c.click();setTimeout(function(){c.animate([{transform:'translateY(-3px) scale(1)'},{transform:'translateY(-3px) scale(1.08)'},{transform:'translateY(-3px) scale(1)'}],{duration:600,iterations:2})},1100)}})}}catch(e){}
+})();</script>
