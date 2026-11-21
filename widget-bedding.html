@@ -45,6 +45,15 @@
 <script>
 (function() {
 var PRODUCTS = [{"n":"Bagged Hay Loose","p":"6.25","b":"Loose Hay","desc":"What it is: Loose hay sold in a contractor-style bag, for bedding/nesting use, not primary feed hay."},{"n":"Derby Gold FINE","p":"7.50","b":"Pine Shavings - Fine","desc":"What it is: A finer-cut pine shaving, more absorbent and easier to muck out than large flake."},{"n":"Hurdz Hemp Shavings 33#","p":"29.50","b":"Hemp Shavings","desc":"What it is: A processed hemp hurd/shive bedding, a low-dust alternative to wood-based bedding."},{"n":"King Flake (Large)","p":"7.75","b":"Pine Shavings - Flake","desc":"What it is: Kiln-dried pine shavings sold as loose flakes, large size."},{"n":"Queen Easy Sift Shavings","p":"7.25","b":"Pine Shavings - Fine","desc":"What it is: Finer-cut pine shavings, marketed for how readily manure can be sifted/picked out."},{"n":"Queen Medium Flake","p":"7.50","b":"Pine Shavings - Flake","desc":"What it is: Kiln-dried pine shavings sold as loose flakes, medium size."},{"n":"Stall Pellets (Pine)","p":"7.50","b":"Pellets","desc":"What it is: Compressed pine sawdust pellets that expand into fine, fluffy bedding once moistened."},{"n":"Suncoast Fine Shavings","p":"8.19","b":"Pine Shavings - Fine","desc":"What it is: Finer-cut pine shavings."}];
+
+var SALE_WINDOW = ['2026-11-27', '2026-11-28'];
+var SALE_ITEMS = {"Queen Easy Sift Shavings": 1};
+(function() {
+var d = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+if (d < SALE_WINDOW[0] || d > SALE_WINDOW[1]) return;
+PRODUCTS.forEach(function(p) { var a = SALE_ITEMS[p.n]; if (a) { p.o = p.p; p.p = (parseFloat(p.p) - a).toFixed(2); } });
+})();
+function salePr(p) { return p.o ? '<s style="opacity:.6;font-weight:400">$' + escapeHtml(p.o) + '</s> $' + escapeHtml(p.p) + ' <span style="background:#B3262E;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;vertical-align:middle;white-space:nowrap">2-DAY SALE</span>' : '$' + escapeHtml(p.p); }
 var _XT={1:'Protein ',2:'% min \u00b7 Fat ',3:'% min \u00b7 Fiber ',4:'% max\nIngredients: '};PRODUCTS.forEach(function(p){if(p.desc)p.desc=p.desc.replace(/@([1-4])/g,function(m,k){return _XT[k]})});
 var brands = Array.from(new Set(PRODUCTS.map(function(p) { return p.b || 'Other'; }))).sort();
 var activeBrand = 'All', allOpen = false;
@@ -145,7 +154,7 @@ if (!m.length) {
 h += om.length ? '<div class="mff-empty">Nothing in ' + DEPT + ' matches, but we found these in other departments:</div>' : '<div class="mff-empty">Nothing here matches. <a target="_top" href="/#s='+encodeURIComponent(q)+'">Search the whole store</a></div>';
 } else {
 h += '<div class="mff-trackwrap"><button class="mff-arr mff-l" aria-label="Previous">&#8249;</button><div class="mff-track">' + shownList.map(function(p, i) {
-return '<div class="mff-card" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 45 + 'ms">' + thumbHtml(p.n) + '<div class="mff-card-name">' + escapeHtml(p.n) + '</div><div class="mff-card-price mff-pr"><span>$' + escapeHtml(p.p) + '</span>' + mffQa(p) + '</div></div>';
+return '<div class="mff-card" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 45 + 'ms">' + thumbHtml(p.n) + '<div class="mff-card-name">' + escapeHtml(p.n) + '</div><div class="mff-card-price mff-pr"><span>' + salePr(p) + '</span>' + mffQa(p) + '</div></div>';
 }).join('') + '</div><button class="mff-arr mff-r" aria-label="Next">&#8250;</button></div><div class="mff-tip">&#8596; Swipe or use the arrows &middot; tap a product for ingredients &amp; feeding info</div><div class="mff-detailslot"></div>';
 }
 h += mffOH(om);
@@ -179,7 +188,7 @@ var slot = popEl.querySelector('.mff-detailslot');
 if (was) { slot.innerHTML = ''; return; }
 card.classList.add('mff-sel'); mffGo(card, slot);
 var p = shownList[parseInt(card.getAttribute('data-i'), 10)];
-slot.innerHTML = '<div class="mff-pdetail"><b>' + escapeHtml(p.n) + ' &mdash; $' + escapeHtml(p.p) + '</b>' + (p.desc && p.desc.trim() ? escapeHtml(p.desc) : '<i>Ingredient and feeding details for this item are still being added — call us and we can help.</i>') + mffAddBtn(p) + '</div>';
+slot.innerHTML = '<div class="mff-pdetail"><b>' + escapeHtml(p.n) + ' &mdash; ' + salePr(p) + '</b>' + (p.desc && p.desc.trim() ? escapeHtml(p.desc) : '<i>Ingredient and feeding details for this item are still being added — call us and we can help.</i>') + mffAddBtn(p) + '</div>';
 });
 var ORDER_URL = 'https://script.google.com/macros/s/AKfycbzTX8ZW_9jTBZGbzlmQ3MHkjZrbnE_oeZ0cZGEGVCg7A4cUxn8UyWAgtbsux_4q8zoRgg/exec';
 var ORDER_KEY = '8f91c948-aedc-4e33-b92c-6126bc11ba84';

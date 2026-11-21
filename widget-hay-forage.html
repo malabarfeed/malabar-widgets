@@ -45,6 +45,15 @@
 <script>
 (function() {
 var PRODUCTS = [{"n":"Alfalfa Block 1200#","p":"420.00","b":"Round Rolls & Blocks","desc":"What it is: A large compressed block of alfalfa hay, designed for free-choice pasture/range feeding of cattle or horses without a hay ring."},{"n":"Alfalfa Block 925#","p":"335.00","b":"Round Rolls & Blocks","desc":"What it is: A large compressed block of alfalfa hay, designed for free-choice pasture/range feeding of cattle or horses without a hay ring."},{"n":"Coastal Hay (Georgia)","p":"11.99","b":"Two-Tie Bales","desc":"What it is: A fine-stemmed variety of Bermuda grass, common and inexpensive throughout the Southeast (45-60# bale)."},{"n":"Peanut Hay (premium)","p":"21.99","b":"Two-Tie Bales","desc":"What it is: Made from perennial peanut, a warm-season legume, nutritionally similar to alfalfa (higher protein/calcium than grass hays). 45-60# bale."},{"n":"Round Roll","p":"112.99","b":"Round Rolls & Blocks","desc":"What it is: A large round bale (48\", 600-800#), typically Bermuda/coastal grass hay - used for pasture-fed cattle and horses."},{"n":"Straw","p":"10.99","b":"Two-Tie Bales","desc":"What it is: Dried stalks left over after a grain crop is harvested - low in nutritional value. 45-60# bale."},{"n":"Three Tie Alfalfa","p":"50.99","b":"Three-Tie Bales","desc":"What it is: Pure alfalfa hay, a legume - higher protein and calcium than any grass hay. 110-120# bale."},{"n":"Three Tie Orchard","p":"51.99","b":"Three-Tie Bales","desc":"What it is: Pure orchard grass hay - nutritionally comparable to timothy, often less dusty and more palatable. 110-120# bale."},{"n":"Three Tie Teff","p":"52.99","b":"Three-Tie Bales","desc":"What it is: A warm-season annual grass, increasingly popular as a low-sugar/low-NSC alternative to coastal Bermuda. 110-120# bale."},{"n":"Three Tie Timothy","p":"51.99","b":"Three-Tie Bales","desc":"What it is: Pure timothy grass hay - one of the most widely recommended hays for horses, low-dust and palatable. 110-120# bale."},{"n":"Two Tie Canadian Alfalfa","p":"20.99","b":"Two-Tie Bales","desc":"What it is: Pure alfalfa hay, a legume - higher protein and calcium than any grass hay. 45-60# bale."},{"n":"Two Tie Canadian O/A","p":"19.50","b":"Two-Tie Bales","desc":"What it is: A blend of orchard grass and alfalfa - combines the fiber of a grass hay with the extra protein/calcium of a legume. 45-60# bale."},{"n":"Two Tie Canadian T/A","p":"18.99","b":"Two-Tie Bales","desc":"What it is: A blend of timothy and alfalfa, same middle-ground logic as the Orchard/Alfalfa mix. 45-60# bale."},{"n":"Two Tie Canadian Timothy","p":"21.99","b":"Two-Tie Bales","desc":"What it is: Pure timothy grass hay - one of the most widely recommended hays for horses, low-dust and palatable. 45-60# bale."},{"n":"Two Tie Canadian Orchard","p":"21.99","b":"Two-Tie Bales","desc":"What it is: Pure orchard grass hay - nutritionally comparable to timothy, often preferred for being less dusty. 45-60# bale."}];
+
+var SALE_WINDOW = ['2026-11-27', '2026-11-28'];
+var SALE_ITEMS = {"Three Tie Alfalfa": 3, "Three Tie Orchard": 3, "Three Tie Teff": 3, "Three Tie Timothy": 3, "Round Roll": 3, "Two Tie Canadian Alfalfa": 1.5, "Two Tie Canadian O/A": 1.5, "Two Tie Canadian T/A": 1.5, "Two Tie Canadian Timothy": 1.5, "Two Tie Canadian Orchard": 1.5};
+(function() {
+var d = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+if (d < SALE_WINDOW[0] || d > SALE_WINDOW[1]) return;
+PRODUCTS.forEach(function(p) { var a = SALE_ITEMS[p.n]; if (a) { p.o = p.p; p.p = (parseFloat(p.p) - a).toFixed(2); } });
+})();
+function salePr(p) { return p.o ? '<s style="opacity:.6;font-weight:400">$' + escapeHtml(p.o) + '</s> $' + escapeHtml(p.p) + ' <span style="background:#B3262E;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;vertical-align:middle;white-space:nowrap">2-DAY SALE</span>' : '$' + escapeHtml(p.p); }
 var _XT={1:'Protein ',2:'% min \u00b7 Fat ',3:'% min \u00b7 Fiber ',4:'% max\nIngredients: '};PRODUCTS.forEach(function(p){if(p.desc)p.desc=p.desc.replace(/@([1-4])/g,function(m,k){return _XT[k]})});
 var brands = Array.from(new Set(PRODUCTS.map(function(p) { return p.b || 'Other'; }))).sort();
 var activeBrand = 'All', allOpen = false;
@@ -145,7 +154,7 @@ if (!m.length) {
 h += om.length ? '<div class="mff-empty">Nothing in ' + DEPT + ' matches, but we found these in other departments:</div>' : '<div class="mff-empty">Nothing here matches. <a target="_top" href="/#s='+encodeURIComponent(q)+'">Search the whole store</a></div>';
 } else {
 h += '<div class="mff-trackwrap"><button class="mff-arr mff-l" aria-label="Previous">&#8249;</button><div class="mff-track">' + shownList.map(function(p, i) {
-return '<div class="mff-card" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 45 + 'ms">' + thumbHtml(p.n) + '<div class="mff-card-name">' + escapeHtml(p.n) + '</div><div class="mff-card-price mff-pr"><span>$' + escapeHtml(p.p) + '</span>' + mffQa(p) + '</div></div>';
+return '<div class="mff-card" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 45 + 'ms">' + thumbHtml(p.n) + '<div class="mff-card-name">' + escapeHtml(p.n) + '</div><div class="mff-card-price mff-pr"><span>' + salePr(p) + '</span>' + mffQa(p) + '</div></div>';
 }).join('') + '</div><button class="mff-arr mff-r" aria-label="Next">&#8250;</button></div><div class="mff-tip">&#8596; Swipe or use the arrows &middot; tap a product for ingredients &amp; feeding info</div><div class="mff-detailslot"></div>';
 }
 h += mffOH(om);
@@ -179,7 +188,7 @@ var slot = popEl.querySelector('.mff-detailslot');
 if (was) { slot.innerHTML = ''; return; }
 card.classList.add('mff-sel'); mffGo(card, slot);
 var p = shownList[parseInt(card.getAttribute('data-i'), 10)];
-slot.innerHTML = '<div class="mff-pdetail"><b>' + escapeHtml(p.n) + ' &mdash; $' + escapeHtml(p.p) + '</b>' + (p.desc && p.desc.trim() ? escapeHtml(p.desc) : '<i>Ingredient and feeding details for this item are still being added — call us and we can help.</i>') + mffAddBtn(p) + '</div>';
+slot.innerHTML = '<div class="mff-pdetail"><b>' + escapeHtml(p.n) + ' &mdash; ' + salePr(p) + '</b>' + (p.desc && p.desc.trim() ? escapeHtml(p.desc) : '<i>Ingredient and feeding details for this item are still being added — call us and we can help.</i>') + mffAddBtn(p) + '</div>';
 });
 var ORDER_URL = 'https://script.google.com/macros/s/AKfycbzTX8ZW_9jTBZGbzlmQ3MHkjZrbnE_oeZ0cZGEGVCg7A4cUxn8UyWAgtbsux_4q8zoRgg/exec';
 var ORDER_KEY = '8f91c948-aedc-4e33-b92c-6126bc11ba84';
